@@ -24,7 +24,7 @@ const initialReservation = {
   specialRequests: '',
 }
 
-const BookingForm = () => {
+const BookingForm = ({ setUpdateNotification, updateNotification }) => {
   // state = {
   //   // come sempre qui dichiaro lo STATO INIZIALE del componente
   //   // ogni volta che creerete un form in React, dovrete salvarne i valori dentro lo state del componente
@@ -75,7 +75,8 @@ const BookingForm = () => {
           //   },
           // })
 
-          setReservation(initialReservation)
+          setReservation(initialReservation) // resetta il form
+          setUpdateNotification(!updateNotification) // cambio il valore di updateNotification nel padre
         } else {
           throw new Error('Errore nel salvataggio della prenotazione! :(')
         }

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 // manca il file css di Bootstrap! importiamolo qua in App.js
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -15,14 +16,22 @@ import BookingList from './components/BookingList'
 // l'intera libreria react-bootstrap
 
 function App() {
+  const [updateNotification, setUpdateNotification] = useState(false)
+  // cosa voglio fare?
+  // updateNotification viene fornita a BookingList come prop
+
   return (
     <>
       <header>
         <CustomNavbar subtitle="Il miglior ristorante italiano del web!" />
       </header>
       <main>
-        <BookingList /> {/* FATTO */}
-        <BookingForm /> {/* FATTO */}
+        <BookingList updateNotification={updateNotification} /> {/* FATTO */}
+        <BookingForm
+          setUpdateNotification={setUpdateNotification}
+          updateNotification={updateNotification}
+        />{' '}
+        {/* FATTO */}
         <HomepageCarousel /> {/* FATTO */}
       </main>
     </>

@@ -6,7 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Alert from 'react-bootstrap/Alert'
 import { Button, Spinner } from 'react-bootstrap'
 
-const BookingList = () => {
+const BookingList = ({ updateNotification }) => {
   // state = {
   //   // questo state prima di tutto servirà a salvare i dati raccolti con la chiamata fetch()
   //   reservations: [], // all'inizio del caricamento del componente, facciamo posto per successivamente
@@ -80,10 +80,14 @@ const BookingList = () => {
   // }
 
   useEffect(() => {
-    console.log('sono componentDidMount!')
+    console.log(
+      'sono componentDidMount! ma ascolto anche i cambiamenti di updateNotification'
+    )
     fetchReservations()
     // a tutti gli effetti questo è un componentDidMount
-  }, [])
+  }, [updateNotification])
+  // le prenotazioni verranno sempre recuperate all'avvio, MA ora verranno recuperate ANCHE
+  // ogni volta che updateNotification cambia
 
   const deleteReservation = (reservationId) => {
     fetch(
