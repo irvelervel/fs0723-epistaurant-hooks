@@ -21,8 +21,8 @@ function App() {
         <CustomNavbar subtitle="Il miglior ristorante italiano del web!" />
       </header>
       <main>
-        <BookingList />
-        <BookingForm />
+        <BookingList /> {/* FATTO */}
+        <BookingForm /> {/* FATTO */}
         <HomepageCarousel /> {/* FATTO */}
       </main>
     </>
