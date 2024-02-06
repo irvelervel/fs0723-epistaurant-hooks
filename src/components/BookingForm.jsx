@@ -24,7 +24,7 @@ const initialReservation = {
   specialRequests: '',
 }
 
-const BookingForm = (props) => {
+const BookingForm = () => {
   // state = {
   //   // come sempre qui dichiaro lo STATO INIZIALE del componente
   //   // ogni volta che creerete un form in React, dovrete salvarne i valori dentro lo state del componente
@@ -76,7 +76,6 @@ const BookingForm = (props) => {
           // })
 
           setReservation(initialReservation)
-          props.setTriggerUpdate(!props.triggerUpdate)
         } else {
           throw new Error('Errore nel salvataggio della prenotazione! :(')
         }
